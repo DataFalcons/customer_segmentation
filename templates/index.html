@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Segmentation</title>
+</head>
+
+<body>
+
+	<h1 style="text-align:center; font-family:verdana; font-size:300%;">Customer Segmentation </h1>
+  <p style=" font-family:Trebuchet MS; font-size:150%;"> Enter the data of customer</p>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="CustomerID" placeholder="CustomerID" required="required" />
+      <input type="text" name="Age" placeholder="Age" required="required" />
+		  <input type="text" name="Annual_Income in k" placeholder="Annual_Income" required="required" />
+		  <input type="text" name="Spending_Score" placeholder="Spending_Score" required="required" />
+          <input type="text" name="Gender_Male" placeholder="Gender_Male" required="required" />
+
+        <button style="background-color: #3b5998; size: 15px; border-radius: 6px; color: aliceblue;" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <p style=" font-family:Trebuchet MS; font-size:150%; text-align:center;"> {{ prediction_text }}</p>
+
+   <br>
+
+   <br>
+   <ul style=" font-family:Trebuchet MS; font-size:100%;">
+    <li>Category 0 -  Low Income High Spending Category</li>
+    <li>Category 1 -  Medium Income Medium Spending</li>
+    <li>Category 2 -  High Income Low Spending Category</li>
+    <li>Category 3 -  Low Income Low Spending Category</li>
+    <li>Category 4 -  High Income High Spending Category</li>
+  </ul>
+   <br>
+   <br>
+</body>
+</html>
